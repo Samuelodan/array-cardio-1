@@ -120,7 +120,7 @@
         const [bLastName, bFirstName] = b.split(",");
         return aLastName < bLastName ? -1 : 1;
       });
-      console.table(byLastName);
+      //console.table(byLastName);
 
       // 8. Reduce Exercise
       // Sum up the instances of each of these
@@ -140,6 +140,14 @@
         "car",
         "truck",
       ];
+      const summedInstances = data.reduce((obj, item) => {
+        if (!obj[item]) {
+          obj[item] = 0;
+        }
+        obj[item]++;
+        return obj;
+      }, {});
+      console.log(summedInstances);
     </script>
   </body>
 </html>
